@@ -106,3 +106,26 @@ No se agregaron a la presentación las secciones de la propuesta que no van a pa
 | Render Chromium headless | ✓ 0 errores JS · 14 secciones en el nuevo orden · scatter con 26 burbujas · gantt con 4 fases y 4 tarjetas de fase completas |
 
 *Nota sobre las capturas automatizadas: los huecos en blanco y la "línea" sobre el título que se veían en screenshots intermedios eran artefactos de captura (animaciones `.reveal` sin disparar y la barra de progreso fija del nav); en el navegador la página se muestra completa.*
+
+---
+
+# Ronda 3 · Fecha del documento y eliminación de secciones fuera del índice
+
+| # | Cambio | Detalle | Motivo / fuente |
+|---|--------|---------|-----------------|
+| 13 | Pie de página | "…revisión interna del 18 de junio de 2026 · Documento interno" → "…propuesta formal v3.0 · **2 de julio de 2026** · Documento interno" | Fecha de envío del documento; alineado a la propuesta v3.0 (2-jul-26). El "18 de junio" dentro de OPS O20 ("Replanteo del 18 de junio") se conserva por ser un hecho del discovery |
+| 14 | **Secciones eliminadas** | Se removieron `#agentes` (Once agentes), `#difer` (Convive con Business Pro) y `#talento` (No reemplaza personas) | No tienen entrada en el índice de la presentación (01 Resumen · 02 Contexto · 03 Oportunidad · 04 Solución · 05 Roadmap). Su contenido esencial sobrevive en otras secciones: los agentes aparecen en los popups del mapa (campo `sol` de OPS), el "solo lectura / no sustituye" vive en #destino y #valor, y el framing de liberación de tiempo permanece en la propuesta formal |
+| — | `#decision` se conserva | Cierre de la presentación con los próximos pasos | El índice sí incluye "Próximo paso" (dentro de 01 · Resumen ejecutivo); una presentación ejecutiva requiere cierre/CTA |
+
+**Estructura final (11 secciones):** destino (01 Resumen) · bien + hoy (02 Contexto) · mapa + top3 + foco1-3 (03 Oportunidad) · valor (04 Solución) · plan (05 Roadmap) · decision (Próximo paso / cierre).
+
+## Verificaciones de la ronda 3 — todas pasaron
+
+| Verificación | Resultado |
+|--------------|-----------|
+| `node --check` del `<script>` | ✓ OK |
+| OPS: 26 objetos · 8/7/9/2 por cuadrante | ✓ Intacto |
+| Regresiones ("olas", "58 personas", "58 colaboradores", "800–1,000") | ✓ 0 en todas |
+| El corte de secciones no arrastró `<style>`, `<script>` ni `<defs>` (verificado antes de escribir) | ✓ |
+| JS sin dependencias de las secciones eliminadas (solo observers con `querySelectorAll`, tolerantes a listas vacías) | ✓ Verificado; render con 0 errores de consola |
+| Render Chromium headless: 11 secciones, scatter con 26 burbujas | ✓ |
