@@ -1,6 +1,17 @@
 # Actualización a los entregables finales del 9 de julio · Presentación de Directores Cabina
 ## Grupo Dicas · Confidencial DaCodes
 
+> **⭐ VERSIÓN FINAL RECOMENDADA: `Cabina_Presentación_Discovery_09Jul26_V2.html`**
+>
+> Tras revisar, la Verónica indicó que su landing más reciente (`PresentaciónDiscovery03Jul26_V1`) **ya incluía un mapa de procesos interactivo** (overlay a pantalla completa con filtros Mapa/Lista · Ciclo de cierre · Ciclo de pagos · etc.), que se perdía con el anexo de imágenes estáticas de la Versión B.
+>
+> **Corrección:** tomé **su archivo con el mapa interactivo como base** y le apliqué solo las 4 actualizaciones de información del 9-jul (piloto, SAT 32-D, garantías por confirmar, fecha/fuente). El mapa interactivo queda **100% intacto** (está embebido como blob HTML en base64 dentro del archivo y no se tocó). Esta `..._V2.html` **sustituye** a las versiones A (solo datos) y B (imágenes estáticas) de abajo, que quedan como referencia del análisis.
+>
+> Verificado: los 3 bloques `<script>` pasan `node --check`; `const OPS` intacto (26, 8/7/9/2); cero "olas"; las 4 actualizaciones presentes; el mapa embebido conserva "Ciclo de cierre/pagos", toggle "Mapa/Lista" y los 22 nodos.
+
+---
+
+
 **Fecha:** 9 de julio de 2026
 **Fuente de verdad:** Entregables finales del Discovery (Google Drive), leídos íntegros:
 - **E1** — Mapa Visual de Procesos, **22 fichas V5 del 9-jul** (P1–P22), cada una con su diagrama §5 regenerado con la convención visual del deck.
