@@ -8,6 +8,13 @@
 > **Corrección:** tomé **su archivo con el mapa interactivo como base** y le apliqué solo las 4 actualizaciones de información del 9-jul (piloto, SAT 32-D, garantías por confirmar, fecha/fuente). El mapa interactivo queda **100% intacto** (está embebido como blob HTML en base64 dentro del archivo y no se tocó). Esta `..._V2.html` **sustituye** a las versiones A (solo datos) y B (imágenes estáticas) de abajo, que quedan como referencia del análisis.
 >
 > Verificado: los 3 bloques `<script>` pasan `node --check`; `const OPS` intacto (26, 8/7/9/2); cero "olas"; las 4 actualizaciones presentes; el mapa embebido conserva "Ciclo de cierre/pagos", toggle "Mapa/Lista" y los 22 nodos.
+>
+> **Actualización del mapa interactivo al E1 V5 (dentro del blob):** además de las 4 actualizaciones de información del deck, se actualizó el contenido del mapa de procesos embebido:
+> - **Nombres de agente EN → ES** en las 22 fichas (tabla de mapa + lista + fichas de detalle nivel-3): "Close Orchestrator" → **Orquestador de Cierre**, "Bank Recon Agent" → **Conciliación**, "AP Agent" → **Cuentas por Pagar**, "AR Agent" → **Cuentas por Cobrar**, "Data Layer" → **Capa de Datos**, "Warranty Agent" → **Garantías**, "OEM Report Agent" → **Reportes OEM**, "Commission Agent" → **Comisiones**, "Payroll Agent" → **Nómina**, "Compliance Agent" → **Cumplimiento**, "Floor Plan Agent" → **Plan de Piso**, "Insights Agent" → **Analítica**, "F&I Reserve Agent" → **Reservas F&I** (y sus combinaciones). Cero nombres en inglés restantes.
+> - **Etiqueta de versión de las fichas** "Ficha estado actual · **Final v3**" → **Final v5** (E1); las tarjetas del E2 se marcaron **Final v7**.
+> - Volumen de facturas en una descripción del mapa: "800–1000/mes" → **≈1,000/mes**.
+> - El diagrama swimlane por proceso (pasos, carriles, fricciones) ya coincidía con el E1 V5 (§4 diagrama por carriles), así que no se alteró.
+> - Verificado: el único bloque `<script>` del blob pasa `node --check`; el mapa abre sin errores JS; la tabla de 22 procesos y las fichas nivel-3 muestran los nombres en español.
 
 ---
 
