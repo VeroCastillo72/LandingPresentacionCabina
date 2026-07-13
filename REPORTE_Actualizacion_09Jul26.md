@@ -15,6 +15,8 @@
 > - Volumen de facturas en una descripción del mapa: "800–1000/mes" → **≈1,000/mes**.
 > - El diagrama swimlane por proceso (pasos, carriles, fricciones) ya coincidía con el E1 V5 (§4 diagrama por carriles), así que no se alteró.
 > - Verificado: el único bloque `<script>` del blob pasa `node --check`; el mapa abre sin errores JS; la tabla de 22 procesos y las fichas nivel-3 muestran los nombres en español.
+>
+> **Diagramas oficiales del Drive dentro del mapa:** el detalle de cada proceso mostraba un swimlane reconstruido por el autor del mapa, no el diagrama oficial de la ficha E1. Se inyectaron los **22 diagramas de flujo §5 oficiales** (extraídos de los Docs V5 del Drive) en el detalle nivel-3: al abrir cualquier proceso ahora se ve su diagrama oficial (flujo de estado actual, fricciones en coral, ciclos de reproceso), con la nota "Fuente oficial del Drive · ficha v5 · 9 jul 2026". Se agregó `const DIAG_IMG` (22 PNG de paleta optimizados, ~1.2 MB) y `openL3` prioriza esa imagen sobre el swimlane. Verificado byte-a-byte (DIAG_IMG["01"] == diagrama oficial de PROC-01) y por render (mapa con 22 nodos, clic en proceso → imagen 1200×712 cargada, 0 errores JS). El archivo final pesa ~6.8 MB (autocontenido).
 
 ---
 
